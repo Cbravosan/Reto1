@@ -1,0 +1,309 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+
+h1 {
+    margin-left: 5%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.contenedor1 {
+    display: grid;
+    margin-top: 5%;    
+    margin-right: 5%;    
+    margin-left: 5%;    
+
+    height: 800px;
+    /*grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+    grid-template-rows: [y0] 1fr [y1] 1fr [y2];*/
+    grid-template-columns: [x0];
+    /*grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3] 1fr [y4];*/
+    grid-template-rows: [y0] 25% [y1] 25% [y2] 25% [y3] 25% [y4];
+    justify-items: center;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.portfolio {
+    grid-row-start: [y0];
+    grid-row-end: [y1];
+    width: 100%;    
+    overflow-y: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h2, p {
+    margin-left: 35px;
+    margin-right: 35px;
+    text-align: justify;
+}
+
+.bio {   
+    grid-row-start: [y1];
+    grid-row-end: [y2];
+    width: 100%;
+    overflow-y: auto;
+}
+
+.cv {
+    grid-row-start: [y2];
+    grid-row-end: [y3];
+    width: 100%;
+    overflow-y: auto;
+}
+
+.trabajos {
+    display: flex;
+    flex-flow: row;
+    margin-left: 5%;
+    margin-right: 5%;  
+}
+
+.trabajo {
+    flex: 25%;
+}
+
+.imagetrab {
+    width: 150px;
+}
+
+.trabajodesc {
+    flex: 75%
+}
+
+.experiencia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 15px;
+  width: 100%; 
+  color: white;
+  text-align: center;
+}
+
+.footer > a, a:visited, a:active {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.footer > a:hover {
+    text-decoration: underline;
+}
+
+.contacto {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 5%;
+    width: 100%;
+    row-gap: 10px;
+}
+
+.contacto-icono {
+    width: 250px;
+    height: 250px;
+}
+ /*hovering contacto*/
+
+ .contacto-icono {
+    opacity: 1;
+    display: block;
+    width: 250px;
+    height: 250px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.texto-contacto {
+    transition: .5s ease;
+    opacity: 0;
+    position: relative;
+    margin-bottom: 20%;
+    /*transform: translate(-60%, -60%);
+    -ms-transform: translate(-50%, -50%);*/
+    text-align: center;
+}
+
+.contacto-texto:hover .contacto-icono {
+    opacity: 0.3;
+}
+
+.contacto-texto:hover .texto-contacto {
+    opacity: 1;
+}
+
+.txtcnt {
+    background-color: grey;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+/*hovering nav*/
+
+.portfolio:hover {
+    background-color: blanchedalmond;
+    transition: .5s ease;
+}
+.portfolio:not(:hover) {
+    background-color: #FAF6F6;
+    transition: .5s ease;
+}
+
+.cv:hover {
+    background-color: blanchedalmond;
+    transition: .5s ease;
+}
+.cv:not(:hover) {
+    background-color: #EBF7F3;
+    transition: .5s ease;
+}
+
+.bio:hover {
+    background-color: blanchedalmond;
+    transition: .5s ease;
+}
+.bio:not(:hover) {
+    background-color: #B1C9CE;
+    transition: .5s ease;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+
+/*medias*/
+
+@media all and (min-width: 1200px) {
+    .contenedor1 {
+        display: grid;
+        margin-top: 2%;    
+        margin-right: 5%;    
+        margin-left: 5%;   
+        height: 700px;
+        grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+        grid-template-rows: [y0] 1fr [y1] 1fr [y2];
+        justify-items: center;
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+    
+    .portfolio {
+        grid-column-start: x0;
+        grid-column-end: x2;
+        width: 100%;       
+        overflow-y: auto;
+    }
+    
+    .bio {   
+        grid-column-start: x2;
+        grid-column-end: x3;
+        width: 100%;
+        overflow-y: auto;
+    }
+    
+    .cv {
+        grid-column-start: x0;
+        grid-column-end: x3;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .trabajos {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .trabajo {
+        flex: 15%;
+    }
+    
+    .imagetrab {
+        width: 150px;
+    }
+    
+    .trabajodesc {
+        flex: 85%
+    }
+
+    .experiencia {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-left: 35px;
+        margin-right: 35px;
+        margin-bottom: 25px;
+    }
+
+    .contacto {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        margin-top: 5%;
+        width: 100%;
+        column-gap: 50px;
+    }
+    
+    /*hovering contacto*/
+
+    .contacto-icono {
+        opacity: 1;
+        display: block;
+        width: 250px;
+        height: 250px;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+    
+    .texto-contacto {
+        transition: .5s ease;
+        opacity: 0;
+        position: relative;
+        margin-bottom: 70%;
+        /*transform: translate(-60%, -60%);
+        -ms-transform: translate(-50%, -50%);*/
+        text-align: center;
+    }
+    
+    .contacto-texto:hover .contacto-icono {
+        opacity: 0.3;
+    }
+    
+    .contacto-texto:hover .texto-contacto {
+        opacity: 1;
+    }
+    
+    .txtcnt {
+        background-color: grey;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+}
+
